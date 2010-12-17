@@ -50,12 +50,12 @@ ul, ol, li {
 
 a {
 	text-decoration: underline;
-	color: #F40C42;
+	color: #ff0000;
 }
 
 a:hover {
 	text-decoration: none;
-	color: #F40C42;
+	color: #AA2808;
 }
 
 /* Wrapper */
@@ -98,7 +98,7 @@ a:hover {
 
 #largelink a {
 	text-decoration: underline;
-	color: #F40C42;
+	color: #ff0000;
     font-size: 22px;
     padding:3px;
 }
@@ -150,7 +150,7 @@ a:hover {
 }
 
 #menu a:hover, #menu .active a {
-	background: #F40C42 url(images/img02.jpg) repeat-x left bottom;
+	background: #D9170E url(images/img02.jpg) repeat-x left bottom;
 	color: #FFFFFF;
 }
 
