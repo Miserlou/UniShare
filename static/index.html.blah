@@ -1,0 +1,155 @@
+<!doctype html>  
+
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ --> 
+<!--[if lt IE 7 ]> <html lang="en" class="no-js ie6"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="en" class="no-js ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en" class="no-js ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html lang="en" class="no-js ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+
+  <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame 
+       Remove this if you use the .htaccess -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <title></title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!--  Mobile viewport optimized: j.mp/bplateviewport -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Place favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+
+  <!-- CSS : implied media="all" -->
+  <link rel="stylesheet" href="css/style.css?v=2">
+
+  <!-- Uncomment if you are specifically targeting less enabled mobile browsers
+  <link rel="stylesheet" media="handheld" href="css/handheld.css?v=2">  -->
+ 
+  <!-- All JavaScript at the bottom, except for Modernizr which enables HTML5 elements & feature detects -->
+  <script src="js/libs/modernizr-1.6.min.js"></script>
+
+</head>
+
+<body>
+<div id="wrap">
+	<div id="header"><center><h1>UniShare</h1><font size="6">Help your fellow students, and they will help you</font></center></div>
+	<div id="nav">
+        <center>
+		<ul>
+			<li><a href="http://www.456bereastreet.com/">Home</a></li>
+			<li><a href="http://www.456bereastreet.com/"><b>Upload!</b></a></li>
+			<li><a href="http://www.456bereastreet.com/">Browse All</a></li>
+			<li><a href="http://www.456bereastreet.com/">About</a></li>
+			<li><a href="http://www.456bereastreet.com/">Contact</a></li>
+		</ul>
+        </center>
+	</div>
+	<div id="main">
+		<h2>Column 1</h2>
+		<p><a href="http://www.456bereastreet.com/">456 Berea Street Home</a></p>
+		<p><a href="http://www.456bereastreet.com/lab/developing_with_web_standards/csslayout/2-col/">Simple 2 column CSS layout</a></p>
+		<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Mauris 
+vel magna. Mauris risus nunc, tristique varius, gravida in, lacinia vel,
+ elit. Nam ornare, felis non faucibus molestie, nulla augue adipiscing 
+mauris, a nonummy diam ligula ut risus. Praesent varius. Cum sociis 
+natoque penatibus et magnis dis parturient montes, nascetur ridiculus 
+mus.</p>
+		<p>Nulla a lacus. Nulla facilisi. Lorem ipsum dolor sit amet, 
+consectetuer adipiscing elit. Fusce pulvinar lobortis purus. Cum sociis 
+natoque penatibus et magnis dis parturient montes, nascetur ridiculus 
+mus. Donec semper ipsum et urna. Ut consequat neque vitae felis. 
+Suspendisse dapibus, magna quis pulvinar laoreet, dolor neque lacinia 
+arcu, et luctus mi erat vestibulum sem. Mauris faucibus iaculis lacus. 
+Aliquam nec ante in quam sollicitudin congue. Quisque congue egestas 
+elit. Quisque viverra. Donec feugiat elementum est. Etiam vel lorem.</p>
+		<p>Aenean tempor. Mauris tortor quam, elementum eu, convallis a, 
+semper quis, purus. Cras at tortor in purus tincidunt tristique. In hac 
+habitasse platea dictumst. Ut eu lectus eu metus molestie iaculis. In 
+ornare. Donec at enim vel erat tempor congue. Nullam varius. Lorem ipsum
+ dolor sit amet, consectetuer adipiscing elit. Nulla feugiat hendrerit 
+risus. Integer enim velit, gravida id, sollicitudin at, consequat sit 
+amet, leo. Fusce imperdiet condimentum velit. Phasellus nonummy interdum
+ est. Pellentesque quam.</p>
+		<h3>Consectetuer adipiscing elit</h3>
+		<p>Nulla dictum. Praesent turpis libero, pretium in, pretium ac, 
+malesuada sed, ligula. Sed a urna eu ipsum luctus faucibus. Curabitur 
+fringilla. Suspendisse sit amet quam. Sed vel pede id libero luctus 
+fermentum. Vestibulum volutpat tempor lectus. Vivamus convallis tempus 
+ante. Nullam adipiscing dui blandit ipsum. Nullam convallis lacus ut 
+quam. Mauris semper elit at ante. Vivamus tristique. Pellentesque 
+pharetra ante at pede. In ultrices arcu vitae purus. In rutrum, erat at 
+mollis consequat, leo massa consequat libero, ac vestibulum libero 
+tellus sed risus. Lorem ipsum dolor sit amet, consectetuer adipiscing 
+elit.</p>
+		<p>Maecenas eu velit nec magna venenatis consequat. In neque. Vivamus 
+pellentesque, lacus eu aliquet semper, lorem metus rhoncus metus, a 
+ornare orci ante a diam. Nunc sem nisl, aliquet quis, elementum nec, 
+imperdiet in, wisi. Proin in lorem. Etiam molestie diam eget ante. Morbi
+ quis tortor id lacus mollis venenatis. Lorem ipsum dolor sit amet, 
+consectetuer adipiscing elit. Aliquam vel orci sit amet tellus mollis 
+eleifend. Donec urna diam, viverra eget, ultricies gravida, ultrices eu,
+ erat. Proin vel arcu. Sed diam. Cras hendrerit arcu sed augue. Sed 
+justo felis, luctus a, accumsan in, tincidunt facilisis, libero. 
+Phasellus eu eros.</p>
+	</div>
+	<div id="sidebar">
+		<h2>Column 2</h2>
+		<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Mauris vel magna.</p>
+		<ul>
+			<li><a href="http://www.456bereastreet.com/">Link 1</a></li>
+			<li><a href="http://www.456bereastreet.com/">Link 2</a></li>
+			<li><a href="http://www.456bereastreet.com/">Link 3</a></li>
+			<li><a href="http://www.456bereastreet.com/">Link 4</a></li>
+			<li><a href="http://www.456bereastreet.com/">Link 5</a></li>
+		</ul>
+	</div>
+	<div id="footer">
+		<p><br /><br /><br /><center>UniShare is produced by <a href="http://www.freeculture.org">Students for Free Culture</a>. <br />All Content is Available Under the Creative-Commons Attribution License.</p></center>
+	</div>
+</div>
+
+  <!-- Javascript at the bottom for fast page loading -->
+
+  <!-- Grab Google CDN's jQuery. fall back to local if necessary -->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="js/libs/jquery-1.4.2.js"%3E%3C/script%3E'))</script>
+  
+  
+  <!-- scripts concatenated and minified via ant build script-->
+  <script src="js/plugins.js"></script>
+  <script src="js/script.js"></script>
+  <!-- end concatenated and minified scripts-->
+  
+  
+  <!--[if lt IE 7 ]>
+    <script src="js/libs/dd_belatedpng.js"></script>
+    <script> DD_belatedPNG.fix('img, .png_bg'); //fix any <img> or .png_bg background-images </script>
+  <![endif]-->
+
+  <!-- yui profiler and profileviewer - remove for production -->
+  <script src="js/profiling/yahoo-profiling.min.js"></script>
+  <script src="js/profiling/config.js"></script>
+  <!-- end profiling code -->
+
+
+  <!-- asynchronous google analytics: mathiasbynens.be/notes/async-analytics-snippet 
+       change the UA-XXXXX-X to be your site's ID -->
+  <script>
+   var _gaq = [['_setAccount', 'UA-XXXXX-X'], ['_trackPageview']];
+   (function(d, t) {
+    var g = d.createElement(t),
+        s = d.getElementsByTagName(t)[0];
+    g.async = true;
+    g.src = ('https:' == location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    s.parentNode.insertBefore(g, s);
+   })(document, 'script');
+  </script>
+
+</body>
+</html>
