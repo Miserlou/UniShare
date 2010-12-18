@@ -1,0 +1,59 @@
+{% extends "index.html" %}
+{% block bodyblock %}
+<div class="post">
+					<div class="post-bgtop">
+						<div class="post-bgbtm">
+							<h2 class="title"><a href="#">Upload Document!</a></h2>
+                    <p><form enctype="multipart/form-data" action="/unishare/upload" method="post">
+    {% csrf_token %}
+
+		<div class="fieldWrapper">
+		  <label for="doc_file">Document: file:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+		  {{ form.doc_file}}
+		  {{ form.doc_file.errors }}
+	  </div><br>
+
+		<div class="fieldWrapper">
+		  <label for="name">Title:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+		  {{ form.name}}
+		  {{ form.name.errors }}
+	  </div><br>
+
+		<div class="fieldWrapper">
+		  <label for="description">Description:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </label>
+		  {{ form.description}}
+		  {{ form.description.errors }}
+	  </div><br>
+
+		<div class="fieldWrapper">
+		  <label for="year">Year:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+		  {{ form.year}}
+		  {{ form.year.errors }}
+	  </div><br>
+
+		<div class="fieldWrapper">
+		  <label for="year">School:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+		  {{ form.school}}
+		  {{ form.school.errors }}
+	  </div><br>
+
+		<div class="fieldWrapper">
+		  <label for="year">Course:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+		  {{ form.course}}
+		  {{ form.course.errors }}
+	  </div><br>
+
+		<div class="fieldWrapper">
+		  <label for="year">Professor:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+		  {{ form.professor}}
+		  {{ form.professor.errors }}
+	  </div><br>
+    
+<p><input type="submit" value="Upload!" /></p>
+</form>
+                        <br />
+							</div>
+						</div>
+					</div>
+				</div>
+{% endblock %}

@@ -13,8 +13,8 @@ Released for free under a Creative Commons Attribution 2.5 License
 body {
 	background: #FFFFFF url(images/img01.jpg) repeat-x left top;
 	text-align: justify;
-	font-family: Tahoma, Geneva, sans-serif;
-	font-size: 11px;
+	font-family: Helvetica, Geneva, sans-serif;
+	font-size: 15px;
 	color: #757E82;
 }
 
@@ -263,7 +263,7 @@ a:hover {
 }
 
 .post .byline {
-	font-size: 11px;
+	font-size: 15px;
 	font-style: italic;
 }
 
@@ -273,7 +273,7 @@ a:hover {
 	float: right;
 	width: 260px;
 	background: url(images/img08.jpg) repeat-y left top;
-	font-size: 11px;
+	font-size: 13px;
 }
 
 #sidebar-bgtop {
@@ -376,7 +376,7 @@ a:hover {
 #footer p {
 	margin: 0;
 	text-align: center;
-	font-size: 11px;
+	font-size: 13px;
 }
 
 #footer a {
