@@ -9,8 +9,8 @@ from tagging.fields import TagField
 from tagging.models import Tag
 from captcha.fields import CaptchaField
 
-ulpath = 'unishare/uploads/recordings/'
-attachment_file_storage = FileSystemStorage(location='/var/www/unishare/unishare/uploads', base_url='documents')
+ulpath = '/home/tuttle/Projects/unishare/unishare/uploads/documents/'
+attachment_file_storage = FileSystemStorage(location='/home/tuttle/Projects/unishare/unishare/uploads/', base_url='documents')
 
 # Create your models here.
 class Document(models.Model):
@@ -26,7 +26,7 @@ class Document(models.Model):
 
     # Files specific
     local_file = models.CharField(max_length='200', blank=True)
-    doc_file = models.FileField(upload_to='recordings', storage=attachment_file_storage)
+    doc_file = models.FileField(upload_to='documents', storage=attachment_file_storage)
     file_loc = models.CharField(max_length='500', blank=True)
     mimetype = models.CharField(max_length='500', blank=True)
 
@@ -48,7 +48,7 @@ class Document(models.Model):
         return Tag.objects.get_for_object(self)
 
 class DocumentForm(ModelForm):
-    captcha = CaptchaField()
+    #captcha = CaptchaField()
     class Meta:
         model = Document
 
@@ -69,7 +69,7 @@ class DocumentForm(ModelForm):
         uploaded_file = self.cleaned_data['doc_file']
         import re
         stored_name = re.sub(r'[^a-zA-Z0-9._]+', '-', uploaded_file.name)
-        self.bound_object.rec_file.save(stored_name, uploaded_file)
+        self.bound_object.doc_file.save(stored_name, uploaded_file)
         self.bound_object.mimetype = uploaded_file.content_type
         self.bound_object.name = self.cleaned_data['name']
         self.bound_object.description = self.cleaned_data['description']
@@ -78,7 +78,6 @@ class DocumentForm(ModelForm):
         self.bound_object.school = self.cleaned_data['school']
         self.bound_object.course = self.cleaned_data['course']
         self.bound_object.professor = self.cleaned_data['professor']
-        self.bound_object.location = self.cleaned_data['location']
         self.bound_object.date = datetime.now()
-        self.bound_object.file_loc = settings.UPLOAD_ROOT + stored_name
+        self.bound_object.file_loc = ulpath + stored_name
         self.bound_object.save() 
