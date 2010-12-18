@@ -7,6 +7,5 @@ info_dict = {
 
 urlpatterns = patterns('',
       (r'^upload$', 'unishare.documents.views.upload'),
-      (r'^victory$', 'unishare.documents.views.victory'),
       (r'^captcha/', include('captcha.urls')),
 )
