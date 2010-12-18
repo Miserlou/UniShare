@@ -3,12 +3,12 @@
 <div class="post">
 					<div class="post-bgtop">
 						<div class="post-bgbtm">
-							<h2 class="title"><a href="#">Upload Document!</a></h2>
+							<h2 class="title"><a href="#">Upload a Document!</a></h2>
                     <p><form enctype="multipart/form-data" action="/upload/" method="post">
     {% csrf_token %}
 
 		<div class="fieldWrapper">
-		  <label for="doc_file">Document: file:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+		  <label for="doc_file">Document: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
 		  {{ form.doc_file}}
 		  {{ form.doc_file.errors }}
 	  </div><br>

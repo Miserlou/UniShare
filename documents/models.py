@@ -75,8 +75,8 @@ class DocumentForm(ModelForm):
         self.bound_object.description = self.cleaned_data['description']
         self.bound_object.year = self.cleaned_data['year']
         self.bound_object.semester = self.cleaned_data['semester']
-        self.bound_object.school = self.cleaned_data['school']
-        self.bound_object.course = self.cleaned_data['course']
+        self.bound_object.school = self.cleaned_data['school'].title()
+        self.bound_object.course = self.cleaned_data['course'].upper()
         self.bound_object.professor = self.cleaned_data['professor']
         self.bound_object.date = datetime.now()
         self.bound_object.file_loc = ulpath + stored_name
