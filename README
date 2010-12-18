@@ -1,1 +1,17 @@
-Nuthin' much here yet..
+UniShare
+by Rich Jones
+for FreeCulture.org
+
+Reqs:
+svn checkout http://django-tagging.googlecode.com/svn/trunk/ django-tagging-read-only
+sudo python setup.py install
+
+svn checkout http://django-simple-captcha.googlecode.com/svn/trunk/ django-simple-captcha-read-only
+sudo python setup.py install
+
+TODO:
+    FIX CAPTCHA !!!!!! 
+    Make sure uploads go to the right place in Apache!
+    jQuery-watermark the upload form
+    About, Contact
+    Seed Content
