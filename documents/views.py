@@ -9,15 +9,17 @@ from django.views.decorators.csrf import csrf_exempt
 
 from unishare.documents.models import Document, DocumentForm
 
+## Dynamic content
+
 def root(request):
     featureset = Document.objects.all().order_by('school')
     return render_to_response('all_schools.html', {'schools': featureset, 'cat': 'main' })
 
-def about(request):
-    return render_to_response('about.html', {'cat': 'about' })
+def school(request, school):
+    featureset = Document.objects.all().filter(school=school).order_by('course')
+    return render_to_response('by_school.html', {'classes': featureset, 'cat': 'main', 'school': school })
 
-def contact(request):
-    return render_to_response('contact.html', {'cat': 'contact' })
+## Forms ##
 
 def upload(request):
     if request.method == 'POST': # If the form has been submitted...
@@ -38,3 +40,11 @@ def upload(request):
         'form': form,
         'cat': 'upload' 
     })
+
+## Static ##
+def about(request):
+    return render_to_response('about.html', {'cat': 'about' })
+
+def contact(request):
+    return render_to_response('contact.html', {'cat': 'contact' })
+

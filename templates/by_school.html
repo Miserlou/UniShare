@@ -6,9 +6,9 @@
 							<h2 class="title"><a href="#">Content From All Universities</a></h2>
 							<div id="largelink">
                             <ul>
-                            {% for school in schools %}
-                                {% if school.school != '' and school.school != None %}
-								<li>&bull; 	<a href="/school/{{school.school}}" >{{school.school}}</a></li>
+                            {% for class in classes %}
+                                {% if class.course != '' and class.course != None %}
+								<li>&bull; 	<a href="/{{school}}/{{class.course}}" >{{class.course}}</a></li>
                                 {% endif %}
                             {% empty %}
                                 Nothing uploaded yet! <br /><br /><br /><br /><br /><br /><br /><br />
