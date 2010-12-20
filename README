@@ -2,6 +2,9 @@ UniShare
 by Rich Jones
 for FreeCulture.org
 
+If you pull this from GitHub, you may need to move the parent directory
+from UniShare to unishare.
+
 Reqs:
 svn checkout http://django-tagging.googlecode.com/svn/trunk/ django-tagging-read-only
 sudo python setup.py install
