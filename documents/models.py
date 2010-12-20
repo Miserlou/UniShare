@@ -9,6 +9,7 @@ from tagging.fields import TagField
 from tagging.models import Tag
 from captcha.fields import CaptchaField
 
+# TODO(astory): convert to relative paths
 ulpath = '/home/tuttle/Projects/unishare/unishare/uploads/documents/'
 attachment_file_storage = FileSystemStorage(location='/home/tuttle/Projects/unishare/unishare/uploads/', base_url='documents')
 
