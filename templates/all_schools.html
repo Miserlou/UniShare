@@ -7,8 +7,8 @@
 							<div id="largelink">
                             <ul>
                             {% for school in schools %}
-                                {% if school.school != '' and school.school != None %}
-								<li>&bull; 	<a href="/school/{{school.school}}" >{{school.school}}</a></li>
+                                {% if school != '' and school != None %}
+								<li>&bull; 	<a href="/school/{{school}}" >{{school}}</a></li>
                                 {% endif %}
                             {% empty %}
                                 Nothing uploaded yet! <br /><br /><br /><br /><br /><br /><br /><br />

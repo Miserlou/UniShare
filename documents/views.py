@@ -12,11 +12,11 @@ from unishare.documents.models import Document, DocumentForm
 ## Dynamic content
 
 def root(request):
-    featureset = Document.objects.all().order_by('school')
+    featureset = Document.objects.values_list('school', flat=True).order_by('school').distinct() 
     return render_to_response('all_schools.html', {'schools': featureset, 'cat': 'main' })
 
 def school(request, school):
-    featureset = Document.objects.all().filter(school=school).order_by('course')
+    featureset = Document.objects.values_list('course', flat=True).filter(school=school).order_by('course').distinct() 
     return render_to_response('by_school.html', {'classes': featureset, 'cat': 'main', 'school': school })
 
 ## Forms ##

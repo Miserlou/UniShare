@@ -3,12 +3,12 @@
 <div class="post">
 					<div class="post-bgtop">
 						<div class="post-bgbtm">
-							<h2 class="title"><a href="#">Content From All Universities</a></h2>
+							<h2 class="title"><a href="#">All Courses At {{school}}</a></h2>
 							<div id="largelink">
                             <ul>
                             {% for class in classes %}
-                                {% if class.course != '' and class.course != None %}
-								<li>&bull; 	<a href="/{{school}}/{{class.course}}" >{{class.course}}</a></li>
+                                {% if class != '' and class != None %}
+								<li>&bull; 	<a href="/{{school}}/{{class}}" >{{class}}</a></li>
                                 {% endif %}
                             {% empty %}
                                 Nothing uploaded yet! <br /><br /><br /><br /><br /><br /><br /><br />
