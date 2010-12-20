@@ -12,6 +12,10 @@ sudo python setup.py install
 svn checkout http://django-simple-captcha.googlecode.com/svn/trunk/ django-simple-captcha-read-only
 sudo python setup.py install
 
+To run the server:
+`python manage.py syncdb`
+`python manage.py runserver`
+
 TODO:
     FIX CAPTCHA !!!!!! 
     Make sure uploads go to the right place in Apache!
