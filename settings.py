@@ -87,6 +87,7 @@ TEMPLATE_DIRS = (
 )
 
 UPLOAD_ROOT = os.path.join(os.path.dirname(__file__), 'uploads')
+UPLOAD_HARD = '/uploads/documents/'
 
 INSTALLED_APPS = (
     'django.contrib.auth',

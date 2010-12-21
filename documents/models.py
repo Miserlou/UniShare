@@ -9,7 +9,7 @@ from tagging.fields import TagField
 from tagging.models import Tag
 from captcha.fields import CaptchaField
 
-attachment_file_storage = FileSystemStorage(location='/home/tuttle/Projects/unishare/unishare/uploads/', base_url='documents')
+attachment_file_storage = FileSystemStorage(location=settings.UPLOAD_ROOT, base_url='documents')
 
 # Create your models here.
 class Document(models.Model):
@@ -78,5 +78,5 @@ class DocumentForm(ModelForm):
         self.bound_object.course = self.cleaned_data['course'].upper()
         self.bound_object.professor = self.cleaned_data['professor']
         self.bound_object.date = datetime.now()
-        self.bound_object.file_loc = settings.UPLOAD_ROOT + stored_name
+        self.bound_object.file_loc = settings.UPLOAD_HARD + stored_name
         self.bound_object.save() 

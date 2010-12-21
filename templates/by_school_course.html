@@ -7,7 +7,7 @@
 							<div id="largelink">
                             <ul>
                             {% for doc in documents %}
-                            <li>&bull; 	<a href="/uploads/{{doc.name}}" >{{doc.name}}</a></li>
+                            <li>&bull; 	<a href="{{doc.file_loc}}" >{{doc.name}}</a></li>
                             <table>
 						
                                                 <thead>
@@ -23,7 +23,6 @@
                                                 <td>Description</td>
                                                 <td><b>{{doc.description}}</b></td>
                                                 </tr>
-                                                <tr>
                                                 <tr>
                                                 <td>Semester</td>
                                                 <td><b>{{doc.semester}}</b></td>
