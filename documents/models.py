@@ -3,6 +3,7 @@ from django.core.files.storage import FileSystemStorage
 from django.core.mail import send_mail
 from django.forms import ModelForm
 from datetime import datetime
+from time import time
 from django import forms
 from django.conf import settings
 from tagging.fields import TagField
@@ -67,7 +68,9 @@ class DocumentForm(ModelForm):
         self.bound_object = Document()
         uploaded_file = self.cleaned_data['doc_file']
         import re
-        stored_name = re.sub(r'[^a-zA-Z0-9._]+', '-', uploaded_file.name)
+        s_time = str(time())
+        s_path = s_time + re.sub(r'[^a-zA-Z0-9._]+', '-', uploaded_file.name)
+        stored_name = s_time + re.sub(r'[^a-zA-Z0-9._]+', '-', uploaded_file.name)
         self.bound_object.doc_file.save(stored_name, uploaded_file)
         self.bound_object.mimetype = uploaded_file.content_type
         self.bound_object.name = self.cleaned_data['name']
@@ -78,5 +81,5 @@ class DocumentForm(ModelForm):
         self.bound_object.course = self.cleaned_data['course'].upper()
         self.bound_object.professor = self.cleaned_data['professor']
         self.bound_object.date = datetime.now()
-        self.bound_object.file_loc = settings.UPLOAD_HARD + stored_name
+        self.bound_object.file_loc = settings.UPLOAD_HARD + s_path
         self.bound_object.save() 
