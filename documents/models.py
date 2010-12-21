@@ -22,7 +22,7 @@ class Document(models.Model):
     semester = models.CharField(max_length='200', blank=True)
     school = models.CharField(max_length='200', blank=False)
     course = models.CharField(max_length='200', blank=False)
-    professor = models.CharField(max_length='200', blank=False)
+    professor = models.CharField(max_length='200', blank=True)
 
     # Files specific
     local_file = models.CharField(max_length='200', blank=True)
@@ -60,7 +60,10 @@ class DocumentForm(ModelForm):
     #        self.is_updating = True
 
     def clean(self):
-        if self.cleaned_data.get('doc_file',None).size > 209715200:
+        doc = self.cleaned_data.get('doc_file',None)
+        if doc is None:
+            raise forms.ValidationError("No file supplied!")
+        if doc.size > 209715200:
             raise forms.ValidationError("File too big, son")
         return self.cleaned_data
 
