@@ -19,6 +19,10 @@ def school(request, school):
     featureset = Document.objects.values_list('course', flat=True).filter(school=school).order_by('course').distinct() 
     return render_to_response('by_school.html', {'classes': featureset, 'cat': 'main', 'school': school })
 
+def school_course(request, school, course):
+    featureset = Document.objects.all().filter(school=school, course=course).order_by('name')
+    return render_to_response('by_school_course.html', {'documents': featureset, 'cat': 'main', 'school': school, 'course': course })
+
 ## Forms ##
 
 def upload(request):

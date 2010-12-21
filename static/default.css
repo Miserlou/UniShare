@@ -58,6 +58,41 @@ a:hover {
 	color: #AA2808;
 }
 
+table {
+                width: 100%;
+                border-collapse: collapse;
+                }
+                
+table thead th {
+                font-weight: bold;
+                font-size: 15px;
+                }
+                
+tbody {
+                }
+                
+tbody tr {
+                background: #fff;
+                }
+              
+tbody tr.alt-row {
+                background: #f3f3f3;
+                }
+                
+table td, table th {
+                padding: 10px;
+                line-height: 1.3em;
+        
+                }        
+				
+table tfoot td .bulk-actions {
+                padding: 15px 0 5px 0;
+                } 
+				
+table tfoot td .bulk-actions select {
+                padding: 4px;
+                }      
+
 /* Wrapper */
 
 #wrapper {

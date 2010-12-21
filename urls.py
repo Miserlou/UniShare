@@ -11,6 +11,7 @@ urlpatterns = patterns('',
      (r'^about/', 'unishare.documents.views.about'),
      (r'^contact/', 'unishare.documents.views.contact'),
      (r'^school/(?P<school>[^/]+)/$', 'unishare.documents.views.school'),
+     (r'^school/(?P<school>[^/]+)/course/(?P<course>[^/]+)/$', 'unishare.documents.views.school_course'),
      
 
     # Uncomment the admin/doc line below to enable admin documentation:

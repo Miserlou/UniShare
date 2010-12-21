@@ -1,0 +1,58 @@
+{% extends "index.html" %}
+{% block bodyblock %}
+<div class="post">
+					<div class="post-bgtop">
+						<div class="post-bgbtm">
+							<h2 class="title"><a href="#">All {{course}} Documents At {{school}}</a></h2>
+							<div id="largelink">
+                            <ul>
+                            {% for doc in documents %}
+                            <li>&bull; 	<a href="/uploads/{{doc.name}}" >{{doc.name}}</a></li>
+                            <table>
+						
+                                                <thead>
+                                                </thead>
+
+                                                <tbody>	
+
+                                                <tr>
+                                                <td>Name</td>
+                                                <td><b>{{doc.name}}</b></td>
+                                                </tr>
+                                                <tr>
+                                                <td>Description</td>
+                                                <td><b>{{doc.description}}</b></td>
+                                                </tr>
+                                                <tr>
+                                                <tr>
+                                                <td>Semester</td>
+                                                <td><b>{{doc.semester}}</b></td>
+                                                </tr>
+                                                <tr>
+                                                <td>Year</td>
+                                                <td><b>{{doc.year}}</b></td>
+                                                </tr>
+                                                <tr>
+                                                <td>Professor</td>
+                                                <td><b>{{doc.professor}}</b></td>
+                                                </tr>
+
+                                            </table><br /><br />
+                            {% empty %}
+                                Nothing uploaded yet! <br /><br /><br /><br /><br /><br /><br /><br />
+                            {% endfor %}
+                            </ul>
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+							</div>
+						</div>
+					</div>
+				</div>
+{% endblock %}
