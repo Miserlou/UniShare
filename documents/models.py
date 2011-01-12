@@ -10,6 +10,8 @@ from tagging.fields import TagField
 from tagging.models import Tag
 from captcha.fields import CaptchaField
 
+import re
+
 attachment_file_storage = FileSystemStorage(location=settings.UPLOAD_ROOT, base_url='documents')
 
 # Create your models here.
@@ -17,7 +19,7 @@ class Document(models.Model):
 
     # Document specific
     name = models.CharField(max_length=200)
-    description = models.CharField(max_length=500)
+    description = models.TextField(blank=False) 
     year = models.CharField(max_length='200', blank=True)
     semester = models.CharField(max_length='200', blank=True)
     school = models.CharField(max_length='200', blank=False)
@@ -70,7 +72,6 @@ class DocumentForm(ModelForm):
     def save(self):
         self.bound_object = Document()
         uploaded_file = self.cleaned_data['doc_file']
-        import re
         s_time = str(time())
         s_path = s_time + re.sub(r'[^a-zA-Z0-9._]+', '-', uploaded_file.name)
         stored_name = s_time + re.sub(r'[^a-zA-Z0-9._]+', '-', uploaded_file.name)
