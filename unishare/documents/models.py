@@ -9,6 +9,7 @@ from django.conf import settings
 from tagging.fields import TagField
 from tagging.models import Tag
 from captcha.fields import CaptchaField
+from os.path import splitext
 
 import re
 
@@ -69,6 +70,18 @@ class DocumentForm(ModelForm):
             raise forms.ValidationError("No file supplied!")
         if doc.size > 209715200:
             raise forms.ValidationError("File too big, son")
+
+        valid_content_types = ('text/html', 'text/plain', 'text/rtf',
+                           'text/xml', 'application/msword',
+                           'application/rtf', 'application/pdf')
+        valid_file_extensions = ('odt', 'pdf', 'doc', 'txt',
+                             'html', 'rtf', 'htm', 'xhtml')
+
+        ext = splitext(doc.name)[1][1:].lower()
+        if not ext in valid_file_extensions \
+           and not doc.content_type in valid_content_types:
+            raise DocumentValidationError()
+
         return self.cleaned_data
 
     def save(self):
@@ -88,4 +101,8 @@ class DocumentForm(ModelForm):
         self.bound_object.professor = self.cleaned_data['professor']
         self.bound_object.date = datetime.now()
         self.bound_object.file_loc = settings.UPLOAD_HARD + s_path
-        self.bound_object.save() 
+        self.bound_object.save()
+
+class DocumentValidationError(forms.ValidationError):
+    def __init__(self):
+        super(DocumentValidationError, self).__init__(u'Sorry, this content-type is not allowed')
