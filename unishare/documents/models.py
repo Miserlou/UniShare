@@ -67,20 +67,24 @@ class DocumentForm(ModelForm):
     def clean(self):
         doc = self.cleaned_data.get('doc_file',None)
         if doc is None:
-            raise forms.ValidationError("No file supplied!")
+            self._errors['doc_file'] = "No file supplied!"
+            raise forms.ValidationError('')
+
         if doc.size > 209715200:
-            raise forms.ValidationError("File too big, son")
+            self._errors['doc_file'] = "File too big, son!"
+            raise forms.ValidationError('')
 
         valid_content_types = ('text/html', 'text/plain', 'text/rtf',
                            'text/xml', 'application/msword',
-                           'application/rtf', 'application/pdf')
+                           'application/rtf', 'application/pdf', 'application/zip')
         valid_file_extensions = ('odt', 'pdf', 'doc', 'txt',
-                             'html', 'rtf', 'htm', 'xhtml')
+                             'html', 'rtf', 'htm', 'xhtml', 'zip')
 
         ext = splitext(doc.name)[1][1:].lower()
         if not ext in valid_file_extensions \
            and not doc.content_type in valid_content_types:
-            raise DocumentValidationError()
+            self._errors['doc_file'] = "Sorry, this is not a valid file-type."
+            raise forms.ValidationError('')
 
         return self.cleaned_data
 
@@ -102,7 +106,3 @@ class DocumentForm(ModelForm):
         self.bound_object.date = datetime.now()
         self.bound_object.file_loc = settings.UPLOAD_HARD + s_path
         self.bound_object.save()
-
-class DocumentValidationError(forms.ValidationError):
-    def __init__(self):
-        super(DocumentValidationError, self).__init__(u'Sorry, this content-type is not allowed')

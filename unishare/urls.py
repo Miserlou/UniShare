@@ -19,7 +19,7 @@ urlpatterns = patterns('',
 
     # Uncomment the next line to enable the admin:
      (r'^admin/', include(admin.site.urls)),
-     (r'^static/(?P<path>.*)$', 'django.views.static.serve', {'document_root':'static'}),
+     (r'^static/(?P<path>.*)$', 'django.views.static.serve', {'document_root':'../static'}),
      (r'^uploads/documents/(?P<path>.*)$', 'django.views.static.serve', {'document_root':'uploads/documents'}),
      (r'^$', 'unishare.documents.views.root')
 )
