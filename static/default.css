@@ -434,6 +434,6 @@ table tfoot td .bulk-actions select {
 	display:inline;
 	float:left;
 	width:120px;
-	text-align:left;
+	text-align:right;
 	margin-right:5px;
 }
