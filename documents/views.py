@@ -28,7 +28,6 @@ def school_course(request, school, course):
 def upload(request):
     if request.method == 'POST': # If the form has been submitted...
         form = DocumentForm(request.POST, request.FILES) # A form bound to the POST data
-        print form
         if form.is_valid(): # All validation rules pass
             # Process the data in form.cleaned_data
             # XXX: Check filetypes, etc
