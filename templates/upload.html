@@ -8,64 +8,106 @@
     {% csrf_token %}
 
 		<div class="fieldWrapper">
-		  <label for="doc_file">Document: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
-		  {{ form.doc_file}}
-		  {{ form.doc_file.errors }}
+          <div class="formlabel">
+		    <label for="doc_file">Document</label>
+          </div>
+          <div class="formfield">
+		    {{ form.doc_file}}
+		    {{ form.doc_file.errors }}
+		  </div>
 	  </div><br>
 
 		<div class="fieldWrapper">
-		  <label for="name">Title:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+          <div class="formlabel">
+		  <label for="name">Title</label>
+          </div>
+          <div class="formfield">
 		  {{ form.name}}
 		  {{ form.name.errors }}
+		  </div>
+	  </div><br>
+
+		<div class="fieldWrapper description">
+          <div class="formlabel">
+		    <label for="description">Description</label>
+          </div>
+          <div class="formfield">
+		    {{ form.description}}
+		    {{ form.description.errors }}
+		  </div>
 	  </div><br>
 
 		<div class="fieldWrapper">
-		  <label for="description">Description:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </label>
-		  {{ form.description}}
-		  {{ form.description.errors }}
+          <div class="formlabel">
+		    <label for="year">Year</label>
+          </div>
+          <div class="formfield">
+		    {{ form.year}}
+		    {{ form.year.errors }}
+		  </div>
 	  </div><br>
 
 		<div class="fieldWrapper">
-		  <label for="year">Year:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
-		  {{ form.year}}
-		  {{ form.year.errors }}
+          <div class="formlabel">
+		    <label for="year">Semester</label>
+          </div>
+          <div class="formfield">
+		    {{ form.semester}}
+		    {{ form.semester.errors }}
+		  </div>
 	  </div><br>
 
 		<div class="fieldWrapper">
-		  <label for="year">Semester:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
-		  {{ form.semester}}
-		  {{ form.semester.errors }}
+          <div class="formlabel">
+		    <label for="year">School</label>
+          </div>
+          <div class="formfield">
+		    {{ form.school}}
+		    {{ form.school.errors }}
+		  </div>
 	  </div><br>
 
 		<div class="fieldWrapper">
-		  <label for="year">School:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
-		  {{ form.school}}
-		  {{ form.school.errors }}
+          <div class="formlabel">
+		  <label for="year">Course</label>
+          </div>
+          <div class="formfield">
+		    {{ form.course}}
+		    {{ form.course.errors }}
+		  </div>
 	  </div><br>
 
 		<div class="fieldWrapper">
-		  <label for="year">Course:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
-		  {{ form.course}}
-		  {{ form.course.errors }}
-	  </div><br>
-
-		<div class="fieldWrapper">
-		  <label for="year">Professor:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
-		  {{ form.professor}}
-		  {{ form.professor.errors }}
+          <div class="formlabel">
+		  <label for="year">Professor</label>
+          </div>
+          <div class="formfield">
+		    {{ form.professor}}
+		    {{ form.professor.errors }}
+		  </div>
 	  </div><br>
 
         {% if form.captcha %}
 		<div class="fieldWrapper">
-		  <label for="location">Verification:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
-		  {{ form.captcha}}
-		  {{ form.captcha.errors }}
+          <div class="formlabel">
+		    <label for="location">Verification</label>
+          </div>
+          <div class="formfield">
+		    {{ form.captcha}}
+		    {{ form.captcha.errors }}
+		  </div>
 	  </div><br>
         {%endif%}
-    
-<p><input type="submit" value="Upload!" /></p>
+      <div class="fieldWrapper">
+          <div class="formlabel">
+		    <!--just a space-->
+		    &nbsp;
+          </div>
+          <div class="formfield">
+		    <input type="submit" value="Upload!" />
+		  </div>
+	  </div><br>
 </form>
-                        <br />
 							</div>
 						</div>
 					</div>
