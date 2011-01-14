@@ -423,3 +423,9 @@ table tfoot td .bulk-actions select {
 	text-decoration: none;
 	color: #F90542;
 }
+
+.formfield, .formlabel {
+	display:inline;
+	float:left;
+	width:240px;
+}
