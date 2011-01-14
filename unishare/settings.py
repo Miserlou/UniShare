@@ -106,3 +106,8 @@ INSTALLED_APPS = (
 
 CAPTCHA_FONT_SIZE = 42
 CAPTCHA_LETTER_ROTATION = None
+
+try:
+    from local_settings import *
+except:
+    pass
