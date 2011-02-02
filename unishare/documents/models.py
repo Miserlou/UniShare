@@ -53,7 +53,7 @@ class Document(models.Model):
         return Tag.objects.get_for_object(self)
 
 class DocumentForm(ModelForm):
-    #captcha = CaptchaField()
+    captcha = CaptchaField()
     class Meta:
         model = Document
 
