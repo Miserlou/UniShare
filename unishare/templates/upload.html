@@ -3,6 +3,18 @@
 <div class="post">
 					<div class="post-bgtop">
 						<div class="post-bgbtm">
+    <script src="/static/jquery/jquery.watermarkinput.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        jQuery(function($){
+        $("#id_name").Watermark("ex, Mirror neurons");
+        $("#id_desc").Watermark("ex, A mirror neuron is a neuron that fires both when an animal acts and when the animal observes the same action performed by another.");
+        $("#id_year").Watermark("ex, 2007");
+        $("#id_school").Watermark("ex, Boston University");
+        $("#id_semester").Watermark("ex, Fall");
+        $("#id_course").Watermark("ex, PS301");
+        $("#id_professor").Watermark("ex, Dewees");
+        });
+    </script>
 							<h2 class="title"><a href="#">Upload a Document!</a></h2>
                     <p><form enctype="multipart/form-data" action="/upload/" method="post">
     {% csrf_token %}
@@ -35,7 +47,7 @@
 		    {{ form.description}}
 		    {{ form.description.errors }}
 		  </div>
-	  </div><br>
+	  </div>
 
 		<div class="fieldWrapper">
           <div class="formlabel">
@@ -106,7 +118,7 @@
           <div class="formfield">
 		    <input type="submit" value="Upload!" />
 		  </div>
-	  </div><br>
+	  </div><br><br><br><br><br>
 </form>
 							</div>
 						</div>
