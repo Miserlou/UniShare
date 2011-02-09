@@ -13,15 +13,15 @@ from unishare.documents.models import Document, DocumentForm
 
 def root(request):
     featureset = Document.objects.values_list('school', flat=True).order_by('school').distinct() 
-    return render_to_response('all_schools.html', {'schools': featureset, 'cat': 'main' })
+    return render_to_response('all_schools.html', {'schools': featureset, 'cat': 'main', 'recent': get_most_recent()})
 
 def school(request, school):
     featureset = Document.objects.values_list('course', flat=True).filter(school=school).order_by('course').distinct() 
-    return render_to_response('by_school.html', {'classes': featureset, 'cat': 'main', 'school': school })
+    return render_to_response('by_school.html', {'classes': featureset, 'cat': 'main', 'school': school , 'recent': get_most_recent()})
 
 def school_course(request, school, course):
     featureset = Document.objects.all().filter(school=school, course=course).order_by('name')
-    return render_to_response('by_school_course.html', {'documents': featureset, 'cat': 'main', 'school': school, 'course': course })
+    return render_to_response('by_school_course.html', {'documents': featureset, 'cat': 'main', 'school': school, 'course': course , 'recent': get_most_recent()})
 
 ## Forms ##
 
@@ -41,13 +41,17 @@ def upload(request):
 
     return render_to_response('upload.html', {
         'form': form,
-        'cat': 'upload' 
+        'cat': 'upload' ,
+        'recent': get_most_recent()
     })
 
 ## Static ##
 def about(request):
-    return render_to_response('about.html', {'cat': 'about' })
+    return render_to_response('about.html', {'cat': 'about' , 'recent': get_most_recent()})
 
 def contact(request):
-    return render_to_response('contact.html', {'cat': 'contact' })
+    return render_to_response('contact.html', {'cat': 'contact' , 'recent': get_most_recent()})
 
+##Helper methods ##
+def get_most_recent():
+    return Document.objects.order_by('date')[:5]

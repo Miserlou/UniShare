@@ -19,6 +19,7 @@ Description: A two-column fixed-width template suitable for small websites.
 <link href="/static/default.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="/static/jquery/jquery-1.4.2.min.js"></script>
 <script type="text/javascript" src="/static/jquery/jquery.slidertron-0.1.js"></script>
+<LINK REL="SHORTCUT ICON" HREF="/static/favicon.ico">
 </head>
 <body>
 <div id="wrapper">
@@ -54,7 +55,7 @@ Description: A two-column fixed-width template suitable for small websites.
 						<ul>
 							<li id="search">
 								<h2>About</h2>
-                                    NotesHub is a place where students can share notes, papers and other educational materials with each other. The content here is 100% free and 100% submitted by students. If you are helped by this website, please consider <a href="/upload">submitting your own materials</a>.
+                                    <b>NotesHub</b> is a place where students can share notes, papers and other educational materials with each other. The content here is 100% free and 100% submitted by students. If you are helped by this website, please consider <b><a href="/upload">submitting your own materials here</a>.</b>
 							</li>
 							<li>
 
@@ -78,25 +79,9 @@ Description: A two-column fixed-width template suitable for small websites.
 							<li>
 								<h2>Recent Uploads</h2>
 								<ul>
-									<li><a href="#">Fusce dui neque fringilla</a></li>
-									<li><a href="#">Eget tempor eget nonummy</a></li>
-									<li><a href="#">Magna lacus bibendum mauris</a></li>
-									<li><a href="#">Nec metus sed donec</a></li>
-									<li><a href="#">Magna lacus bibendum mauris</a></li>
-									<li><a href="#">Velit semper nisi molestie</a></li>
-									<li><a href="#">Eget tempor eget nonummy</a></li>
-								</ul>
-							</li>
-							<li>
-								<h2>Popular Documents</h2>
-								<ul>
-									<li><a href="#">Nec metus sed donec</a></li>
-									<li><a href="#">Magna lacus bibendum mauris</a></li>
-									<li><a href="#">Velit semper nisi molestie</a></li>
-									<li><a href="#">Eget tempor eget nonummy</a></li>
-									<li><a href="#">Nec metus sed donec</a></li>
-									<li><a href="#">Magna lacus bibendum mauris</a></li>
-									<li><a href="#">Velit semper nisi molestie</a></li>
+                                    {% for doc in recent %}
+									<li><a href="/school/{{doc.school}}/course/{{doc.course}}"><b>{{doc.name}}</b> - {{doc.course}} - {{doc.school}}</a></li>
+                                    {% endfor %}
 								</ul>
 							</li>
 
