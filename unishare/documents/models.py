@@ -51,6 +51,9 @@ class Document(models.Model):
 
     def get_tags(self):
         return Tag.objects.get_for_object(self)
+    
+    def __unicode__(self):
+        return self.name + ' - ' + self.course + ' - ' + self.school
 
 class DocumentForm(ModelForm):
     captcha = CaptchaField()
