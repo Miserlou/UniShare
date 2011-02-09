@@ -17,8 +17,4 @@ To run the server:
 `python manage.py runserver`
 
 TODO:
-    FIX CAPTCHA !!!!!! 
-    Make sure uploads go to the right place in Apache!
-    jQuery-watermark the upload form
-    About, Contact
     Seed Content
