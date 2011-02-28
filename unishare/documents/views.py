@@ -54,4 +54,4 @@ def contact(request):
 
 ##Helper methods ##
 def get_most_recent():
-    return Document.objects.order_by('date')[:5]
+    return Document.objects.order_by('-date')[:5]
